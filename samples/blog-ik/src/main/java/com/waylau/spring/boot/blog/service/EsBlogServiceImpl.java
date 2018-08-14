@@ -98,7 +98,7 @@ public class EsBlogServiceImpl implements EsBlogService {
 	/**
 	 * 最新前5
 	 * 
-	 * @param keyword
+	 * @param
 	 * @return
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class EsBlogServiceImpl implements EsBlogService {
 	/**
 	 * 最热前5
 	 * 
-	 * @param keyword
+	 * @param  
 	 * @return
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class EsBlogServiceImpl implements EsBlogService {
 
 		StringTerms modelTerms = (StringTerms) aggregations.asMap().get("tags");
 
-		Iterator<Bucket> modelBucketIt = modelTerms.getBuckets().iterator();
+		Iterator<StringTerms.Bucket> modelBucketIt = modelTerms.getBuckets().iterator();
 		while (modelBucketIt.hasNext()) {
 			Bucket actiontypeBucket = modelBucketIt.next();
 
@@ -171,7 +171,7 @@ public class EsBlogServiceImpl implements EsBlogService {
 
 		StringTerms modelTerms = (StringTerms) aggregations.asMap().get("users");
 
-		Iterator<Bucket> modelBucketIt = modelTerms.getBuckets().iterator();
+		Iterator<StringTerms.Bucket> modelBucketIt = modelTerms.getBuckets().iterator();
 		while (modelBucketIt.hasNext()) {
 			Bucket actiontypeBucket = modelBucketIt.next();
 			String username = actiontypeBucket.getKey().toString();

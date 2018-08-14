@@ -7,6 +7,7 @@
 
 <!-- Page content -->
 <div class="container blog-content-container"> 
+	<!--/*@thymesVar id="title" type="java.lang.String"*/-->
 	<h3 th:text="${userModel.title}">waylau</h3>
 	<div>
 		<a class="btn btn-default" href="/users/form.html" th:href="@{/users/form}">创建用户</a>

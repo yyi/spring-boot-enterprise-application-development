@@ -25,15 +25,15 @@ public class EsBlog implements Serializable {
 	private String id;  
 	@Field(type = FieldType.Long)    
 	private Long blogId; // Blog 实体的 id
-	@Field(type = FieldType.text)     
+	@Field(type = FieldType.Text)
 	private String title;
-	@Field(type = FieldType.text)  
+	@Field(type = FieldType.Text)
 	private String summary;
-	@Field(type = FieldType.text)  
+	@Field(type = FieldType.Text)
 	private String content;
-	@Field(type = FieldType.keyword, index = false)  // 不做全文检索字段  
+	@Field(type = FieldType.Keyword, index = false)  // 不做全文检索字段
 	private String username;
-	@Field(type = FieldType.text,index = false)  // 不做全文检索字段  
+	@Field(type = FieldType.Text,index = false)  // 不做全文检索字段
 	private String avatar;
 	@Field(type = FieldType.Date,index = false)  // 不做全文检索字段  
 	private Timestamp createTime;
@@ -43,7 +43,7 @@ public class EsBlog implements Serializable {
 	private Integer commentSize = 0;  // 评论量
 	@Field(type = FieldType.Integer,index = false)  // 不做全文检索字段  
 	private Integer voteSize = 0;  // 点赞量
-	@Field(type = FieldType.text,fielddata = true, searchAnalyzer = "ik_smart", analyzer = "ik_smart") 
+	@Field(type = FieldType.Text,fielddata = true, searchAnalyzer = "ik_smart", analyzer = "ik_smart")
 	private String tags;  // 标签
 
 	protected EsBlog() {  // JPA 的规范要求无参构造函数；设为 protected 防止直接使用 

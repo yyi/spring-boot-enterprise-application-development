@@ -32,7 +32,7 @@ public class EsBlogRepositoryTest {
 		esBlogRepository.deleteAll();
 
 		// 初始化数据
-        esBlogRepository.save(new EsBlog("Had I not seen the Sun",
+        esBlogRepository.save(new EsBlog("中文Had I not seen the Sun",
         		"I could have borne the shade",
                 "But Light a newer Wilderness. My Wilderness has made."));
         esBlogRepository.save(new EsBlog("There is room in the halls of pleasure",
@@ -59,7 +59,7 @@ public class EsBlogRepositoryTest {
 		}
 		System.out.println("---------end 1");
 		
-		title = "the";
+		title = "中文";
 		summary = "the";
 		content = "the";
 		
